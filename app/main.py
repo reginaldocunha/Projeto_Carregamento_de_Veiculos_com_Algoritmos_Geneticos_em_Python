@@ -50,6 +50,17 @@ class Individuo():
         filhos[1].cromossomo = filho2
         return filhos
 
+    def mutacao(self, taxa_mutacao):
+        #print("Antes %s " % self.cromossomo)
+        for i in range(len(self.cromossomo)):
+            if random() < taxa_mutacao:
+                if self.cromossomo[i] == '1':
+                    self.cromossomo[i] = '0'
+                else:
+                    self.cromossomo[i] = '1'
+        #print("Depois %s " % self.cromossomo)
+        return self
+
 
 if __name__ == '__main__':
     lista_produtos = []
