@@ -26,20 +26,6 @@ class Individuo():
                 self.cromossomo.append("1")
 
 
-    def crossover(self, outro_individuo):
-        corte = round(random() * len(self.cromossomo))
-
-        filho1 = outro_individuo.cromossomo[0:corte] + self.cromossomo[corte::]
-        filho2 = self.cromossomo[0:corte] + outro_individuo.cromossomo[corte::]
-
-        filhos = [Individuo(self.espacos, self.valores, self.limite_espacos, self.geracao + 1),
-                  Individuo(self.espacos, self.valores, self.limite_espacos, self.geracao + 1)]
-        filhos[0].cromossomo = filho1
-        filhos[1].cromossomo = filho2
-        return filhos
-
-
-
     def avaliacao(self):
         nota = 0
         soma_espacos = 0
@@ -52,6 +38,17 @@ class Individuo():
         self.nota_avaliacao = nota
         self.espaco_usado = soma_espacos
 
+    def crossover(self, outro_individuo):
+        corte = round(random() * len(self.cromossomo))
+
+        filho1 = outro_individuo.cromossomo[0:corte] + self.cromossomo[corte::]
+        filho2 = self.cromossomo[0:corte] + outro_individuo.cromossomo[corte::]
+
+        filhos = [Individuo(self.espacos, self.valores, self.limite_espacos, self.geracao + 1),
+                  Individuo(self.espacos, self.valores, self.limite_espacos, self.geracao + 1)]
+        filhos[0].cromossomo = filho1
+        filhos[1].cromossomo = filho2
+        return filhos
 
 
 if __name__ == '__main__':
