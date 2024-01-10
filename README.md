@@ -1,0 +1,2 @@
+# Projeto_Carregamento_de_Veiculos_com_Algoritmos_Geneticos_em_Python
+Resolução do problema do carregamento de veículos utilizando algoritmos genéticos em Python
