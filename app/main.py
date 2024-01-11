@@ -69,6 +69,12 @@ class AlgoritmoGenetico():
         self.melhor_solucao = 0
         self.lista_solucoes = []
 
+    def inicializa_populacao(self, espacos, valores, limite_espacos):
+        for i in range(self.tamanho_populacao):
+            self.populacao.append(Individuo(espacos, valores, limite_espacos))
+        self.melhor_solucao = self.populacao[0]
+
+
 
 if __name__ == '__main__':
     lista_produtos = []
