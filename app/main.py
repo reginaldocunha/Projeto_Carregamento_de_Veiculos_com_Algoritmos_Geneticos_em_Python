@@ -79,6 +79,12 @@ class AlgoritmoGenetico():
                                 key = lambda populacao: populacao.nota_avaliacao,
                                 reverse = True)
 
+    def melhor_individuo(self, individuo):
+        if individuo.nota_avaliacao > self.melhor_solucao.nota_avaliacao:
+            self.melhor_solucao = individuo
+
+
+
 
 if __name__ == '__main__':
     lista_produtos = []
