@@ -61,6 +61,14 @@ class Individuo():
         #print("Depois %s " % self.cromossomo)
         return self
 
+class AlgoritmoGenetico():
+    def __init__(self, tamanho_populacao):
+        self.tamanho_populacao = tamanho_populacao
+        self.populacao = []
+        self.geracao = 0
+        self.melhor_solucao = 0
+        self.lista_solucoes = []
+
 
 if __name__ == '__main__':
     lista_produtos = []
