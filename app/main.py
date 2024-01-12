@@ -100,6 +100,13 @@ class AlgoritmoGenetico():
             i += 1
         return pai
 
+    def visualiza_geracao(self):
+        melhor = self.populacao[0]
+        print("G:%s -> Valor: %s Espaço: %s Cromossomo: %s" % (self.populacao[0].geracao,
+                                                               melhor.nota_avaliacao,
+                                                               melhor.espaco_usado,
+                                                               melhor.cromossomo))
+
 
 
 if __name__ == '__main__':
