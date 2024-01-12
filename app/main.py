@@ -83,6 +83,11 @@ class AlgoritmoGenetico():
         if individuo.nota_avaliacao > self.melhor_solucao.nota_avaliacao:
             self.melhor_solucao = individuo
 
+    def soma_avaliacoes(self):
+        soma = 0
+        for individuo in self.populacao:
+           soma += individuo.nota_avaliacao
+        return soma
 
 
 
