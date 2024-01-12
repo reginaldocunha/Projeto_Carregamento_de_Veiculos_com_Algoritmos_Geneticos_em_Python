@@ -89,6 +89,17 @@ class AlgoritmoGenetico():
            soma += individuo.nota_avaliacao
         return soma
 
+    def seleciona_pai(self, soma_avaliacao):
+        pai = -1
+        valor_sorteado = random() * soma_avaliacao
+        soma = 0
+        i = 0
+        while i < len(self.populacao) and soma < valor_sorteado:
+            soma += self.populacao[i].nota_avaliacao
+            pai += 1
+            i += 1
+        return pai
+
 
 
 if __name__ == '__main__':
