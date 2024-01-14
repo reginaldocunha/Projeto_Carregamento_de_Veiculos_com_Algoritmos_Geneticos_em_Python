@@ -29,7 +29,7 @@ class Individuo:
     def avaliacao(self):
         nota = 0
         soma_espacos = 0
-        for i in range(len(self.cromossomo)):
+        for _ in range(len(self.cromossomo)):
             if self.cromossomo[i] == '1':
                 nota += self.valores[i]
                 soma_espacos += self.espacos[i]
@@ -52,7 +52,7 @@ class Individuo:
 
     def mutacao(self, taxa_mutacao):
         # print("Antes %s " % self.cromossomo)
-        for i in range(len(self.cromossomo)):
+        for _ in range(len(self.cromossomo)):
             if random() < taxa_mutacao:
                 if self.cromossomo[i] == '1':
                     self.cromossomo[i] = '0'
