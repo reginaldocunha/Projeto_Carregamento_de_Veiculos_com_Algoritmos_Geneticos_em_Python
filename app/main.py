@@ -20,7 +20,7 @@ class Individuo:
         self.geracao = geracao
         self.cromossomo = []
 
-        for i in range(len(espacos)):
+        for _ in range(len(espacos)):
             if random() < 0.5:
                 self.cromossomo.append("0")
             else:
@@ -71,7 +71,7 @@ class AlgoritmoGenetico:
         self.lista_solucoes = []
 
     def inicializa_populacao(self, espacos, valores, limite_espacos):
-        for i in range(self.tamanho_populacao):
+        for _ in range(self.tamanho_populacao):
             self.populacao.append(Individuo(espacos, valores, limite_espacos))
         self.melhor_solucao = self.populacao[0]
 
@@ -120,11 +120,11 @@ class AlgoritmoGenetico:
 
         self.visualiza_geracao()
 
-        for geracao in range(numero_geracoes):
+        for _ in range(numero_geracoes):
             soma_avaliacao = self.soma_avaliacoes()
             nova_populacao = []
 
-            for individuos_gerados in range(0, self.tamanho_populacao, 2):
+            for _ in range(0, self.tamanho_populacao, 2):
                 pai1 = self.seleciona_pai(soma_avaliacao)
                 pai2 = self.seleciona_pai(soma_avaliacao)
 
