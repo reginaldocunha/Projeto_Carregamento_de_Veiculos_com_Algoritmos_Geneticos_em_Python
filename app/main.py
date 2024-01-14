@@ -200,8 +200,7 @@ if __name__ == '__main__':
             print("Nome: %s R$ %s " % (lista_produtos[i].nome,
                                        lista_produtos[i].valor))
 
-    # for valor in ag.lista_solucoes:
-    #    print(valor)
+
     plt.plot(ag.lista_solucoes)
     plt.title("Acompanhamento dos valores")
     plt.show()
