@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 import pymysql
 
 
-class Produto():
+class Produto:
     def __init__(self, nome, espaco, valor):
         self.nome = nome
         self.espaco = espaco
         self.valor = valor
 
 
-class Individuo():
+class Individuo:
     def __init__(self, espacos, valores, limite_espacos, geracao=0):
         self.espacos = espacos
         self.valores = valores
@@ -25,7 +25,6 @@ class Individuo():
                 self.cromossomo.append("0")
             else:
                 self.cromossomo.append("1")
-
 
     def avaliacao(self):
         nota = 0
@@ -52,17 +51,18 @@ class Individuo():
         return filhos
 
     def mutacao(self, taxa_mutacao):
-        #print("Antes %s " % self.cromossomo)
+        # print("Antes %s " % self.cromossomo)
         for i in range(len(self.cromossomo)):
             if random() < taxa_mutacao:
                 if self.cromossomo[i] == '1':
                     self.cromossomo[i] = '0'
                 else:
                     self.cromossomo[i] = '1'
-        #print("Depois %s " % self.cromossomo)
+        # print("Depois %s " % self.cromossomo)
         return self
 
-class AlgoritmoGenetico():
+
+class AlgoritmoGenetico:
     def __init__(self, tamanho_populacao):
         self.tamanho_populacao = tamanho_populacao
         self.populacao = []
@@ -77,8 +77,8 @@ class AlgoritmoGenetico():
 
     def ordena_populacao(self):
         self.populacao = sorted(self.populacao,
-                                key = lambda populacao: populacao.nota_avaliacao,
-                                reverse = True)
+                                key=lambda populacao: populacao.nota_avaliacao,
+                                reverse=True)
 
     def melhor_individuo(self, individuo):
         if individuo.nota_avaliacao > self.melhor_solucao.nota_avaliacao:
@@ -87,7 +87,7 @@ class AlgoritmoGenetico():
     def soma_avaliacoes(self):
         soma = 0
         for individuo in self.populacao:
-           soma += individuo.nota_avaliacao
+            soma += individuo.nota_avaliacao
         return soma
 
     def seleciona_pai(self, soma_avaliacao):
